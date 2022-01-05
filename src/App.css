@@ -1,6 +1,9 @@
 :root {
   /*Color*/
-  --color-white-gray: #eee;
+  --sidebar-background-color: #0059ab;
+  --search-font-color: rgb(233, 231, 231);
+  --black-color: #333;
+  --white-color: #eee;
 
   /*Font size*/
   --font-large: 48px;
@@ -9,7 +12,11 @@
   --font-small: 16px;
   --font-micro: 14px;
 
-  --current-font: "Noto Sans KR", sans-serif;
+  --font-sidebar-menu-item: 16px;
+
+  --font-sidebar-menu-weight: 600;
+
+  --main-font: "Noto Sans KR", sans-serif;
 }
 
 * {
@@ -28,17 +35,17 @@ li {
 
 body {
   background-color: var(--color-white-gray);
-  font-family: var(--current-font);
+  font-family: var(--main-font);
 }
 
 .side-menu {
   position: fixed;
-  background: #000;
+  background: var(--sidebar-background-color);
   width: 300px;
   height: 100%;
-
   box-sizing: border-box;
   padding: 30px 20px;
+  transition: width 0.2s ease-in;
 }
 
 .side-menu .top-section {
@@ -47,7 +54,7 @@ body {
 
 .side-menu .top-section .logo {
   overflow: hidden;
-  width: 250px;
+  width: 100px;
   display: inline-block;
 }
 
@@ -55,15 +62,90 @@ body {
   max-width: 100%;
   max-height: 100%;
 }
+
 .side-menu .top-section .toggle-menu {
-  color: #9e2323;
+  color: var(--white-color);
   position: absolute;
-  top: 9%;
-  right: 0px;
+  width: 30px;
+  height: 30px;
+  top: 100px;
+  right: 70px;
+  transform: translateY(-50%);
+  display: flex;
+  cursor: pointer;
+}
+
+.side-menu .top-section .toggle-menu .toggle-menu-btn {
+  display: inline-block;
+}
+
+.side-menu .search-controller {
+  color: #fff;
+  position: relative;
+}
+
+.side-menu .search-btn {
+  color: var(--search-font-color);
+  position: absolute;
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+
+  top: 60%;
+  left: 5px;
   transform: translateY(-50%);
 }
 
-.side-menu .top-section .toggle-menu .toggle-menu__btn {
-  font-size: 50px;
+.side-menu .search-btn .search-icon {
+  font-size: 30px;
+}
+
+.side-menu .search-controller input[type="text"] {
+  border: 0;
+  outline: none;
+  height: 35px;
+  background: var(--black-color);
+  border-radius: 5px;
+  display: block;
+  margin: 20px 0;
+  width: 100%;
+
+  box-sizing: border-box;
+  padding-left: 40px;
+  color: var(--search-font-color);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  border-radius: 1px;
+  background: var(--black-color);
+}
+
+.side-menu .main-menu .menu-item {
+  color: #333;
+  text-decoration: none;
+  font-size: var(--font-sidebar-menu-item);
+  font-weight: var(--font-sidebar-menu-weight);
+  display: block;
+}
+
+.side-menu .main-menu .menu-item .menu-icon {
   display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgb(201, 199, 199);
+  font-size: 120px;
+  line-height: 40px;
+  text-align: center;
+}
+
+/* inactive */
+.side-menu.inactive {
+  width: 80px;
+}
+
+.side-menu.inactive .top-section .toggle-menu {
+  right: -50px;
+  color: var(--black-color);
 }
