@@ -41,15 +41,14 @@ body {
   padding: 30px 20px;
 }
 
-.top-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.side-menu .top-section {
+  display: relative;
 }
 
 .side-menu .top-section .logo {
   overflow: hidden;
   width: 250px;
+  display: inline-block;
 }
 
 .side-menu .top-section .logo img {
@@ -57,9 +56,14 @@ body {
   max-height: 100%;
 }
 .side-menu .top-section .toggle-menu {
-  color: #eeeeee;
+  color: #9e2323;
+  position: absolute;
+  top: 9%;
+  right: 0px;
+  transform: translateY(-50%);
 }
 
-.side-menu .top-section .toggle-menu .toggle-menu__item {
+.side-menu .top-section .toggle-menu .toggle-menu__btn {
   font-size: 50px;
+  display: inline-block;
 }

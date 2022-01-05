@@ -11,7 +11,7 @@ function SideMenu() {
           <img src={logo} />
         </div>
         <div className="toggle-menu">
-          <MenuOpenTwoToneIcon className="toggle-menu__item" />
+          <MenuOpenTwoToneIcon className="toggle-menu__btn" />
         </div>
       </div>
     </div>
