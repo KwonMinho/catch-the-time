@@ -1,12 +1,12 @@
 import "./App.css";
-import SideMenu from "./components/SideMenu";
-import { useState } from "react";
+import "./sidebar/SideMenu.css";
+import "./home/Home.css";
 
+import SideMenu from "./sidebar/SideMenu";
+import Home from "./home/Home";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const Home = () => {
-  return <h1>home</h1>;
-};
 const Community = () => {
   return <h1>community</h1>;
 };

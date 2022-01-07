@@ -1,0 +1,9 @@
+/* ------Side Menu----- */
+.container {
+  margin-left: 300px;
+  transition: margin-left 0.2s ease-in;
+}
+
+.container.inactive {
+  margin-left: 80px;
+}
