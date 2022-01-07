@@ -1,3 +1,11 @@
+:root {
+  /*Color*/
+  --preview-title-icon-color: #0059ab;
+  --search-font-color: rgb(233, 231, 231);
+  --black-color: #333;
+  --white-color: #fff;
+}
+
 /* ------Side Menu----- */
 .container {
   margin-left: 300px;
@@ -6,4 +14,42 @@
 
 .container.inactive {
   margin-left: 80px;
+}
+
+.preview-title {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.preview-title .preview-title-icon {
+  color: var(--preview-title-icon-color);
+}
+
+.preview-posts {
+  width: 500px;
+  height: 500px;
+  background-color: greenyellow;
+}
+
+.preview-posts .post {
+  display: flex;
+  background-color: red;
+}
+
+.preview-posts .post .post-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.preview-posts .post .post-meta {
+  display: flex;
+  align-items: center;
+}
+
+.preview-posts .post .post-meta .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
