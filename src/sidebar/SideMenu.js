@@ -7,6 +7,7 @@ import logo from "../assets/angler.png";
 import toogleCloseIcon from "../assets/menu-toggle-close.png";
 import toogleOpenIcon from "../assets/menu-toggle-open.png";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import { Tooltip } from "@mui/material";
 
 //tmp
 import user from "../assets/user.jpeg";
@@ -30,11 +31,13 @@ function SideMenu({ onCollapse }) {
           {inactive ? null : <div id="logo-title">세월을 낚다</div>}
         </div>
         <div className="toggle-menu" onClick={() => setInactive(!inactive)}>
-          <img
-            className="toggle-menu-btn"
-            alt="toogle-button"
-            src={inactive ? toogleOpenIcon : toogleCloseIcon}
-          />
+          <Tooltip title={inactive ? "메뉴 닫기" : "메뉴 열기"} arrow>
+            <img
+              className="toggle-menu-btn"
+              alt="toogle-button"
+              src={inactive ? toogleOpenIcon : toogleCloseIcon}
+            />
+          </Tooltip>
         </div>
       </div>
       <div className="search-controller">
