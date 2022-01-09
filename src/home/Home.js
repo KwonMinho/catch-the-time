@@ -1,17 +1,19 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import PreviewContainer from "./PreviewContainer";
+import { PreviewListData } from "./PreviewListData";
 
 function Home() {
   return (
     <div className="home">
-      <Grid container spacing={2} columns={16}>
-        <Grid item xs={8} md={8}>
-          <PreviewContainer>xs=6 md=8</PreviewContainer>
-        </Grid>
-        <Grid item xs={8} md={4}>
-          <PreviewContainer>xs=6 md=4</PreviewContainer>
-        </Grid>
+      <Grid container spacing={4} columns={16}>
+        {PreviewListData.map((val, id) => {
+          return (
+            <Grid key={id} item xs={8} md={8}>
+              <PreviewContainer title={val.title} icon={val.icon} />
+            </Grid>
+          );
+        })}
       </Grid>
     </div>
   );
